@@ -1,0 +1,142 @@
+:root {
+    --Dark-cyan: hsl(158, 36%, 37%);
+    --Dark-dark-cyan: hsl(158, 36%, 20%);
+    --Cream: hsl(30, 38%, 92%);
+    
+    
+    --Very-dark-blue: hsl(212, 21%, 14%);
+    --Dark-grayish-blue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%) ;
+
+
+    --ff-accent: 'Fraunces', serif;
+    --ff-base: 'Montserrat', sans-serif;
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+
+body {
+    font-family: var(--ff-base);
+    font-weight: var(--fw-regular);
+    font-size: 0.87rem;
+    color: var(--Dark-grayish-blue);
+    background-color: var(--Cream);
+
+    display: grid;
+    min-height: 100vh;
+    place-content: center;
+    margin: 1rem;
+}
+
+
+/*utiliteies*/
+
+.flex_group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+
+/*product styles*/
+.product {
+  --content-padding: 1.5rem;
+  --content-spacing: 1rem;
+
+  display: grid;
+  background-color: var(--White);
+  border-radius: 0.8rem;
+  overflow: hidden;
+  max-width: 600px;
+}
+
+
+@media (min-width: 600px) {
+    .product {
+        --content-padding: 2rem;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.product_content {
+    display: grid;
+    gap: var(--content-spacing);
+    padding: var(--content-padding);
+}
+
+.product_category {
+    font-size: 0.8190rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.product_title {
+    font-size: 2rem;
+    font-family:  var(--ff-accent);
+    color: var(--Very-dark-blue);
+}
+
+
+.product__price {
+    font-size: 2rem;
+    font-family: var(--ff-accent);
+    color: var(--Dark-cyan);
+}
+
+/*button*/
+
+.button {
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    justify-content: center;
+    border: 0;
+    border-radius: 0.5rem;
+    padding: 0.75em 1.5em;
+    background-color: var(--Dark-cyan);
+    color: var(--Cream);
+    font-weight: var(--fw-bold);
+    font-size: 0.925rem;
+}
+
+.button[data-icon="shopping-cart"]::before {
+    content: "";
+    background-image: url("images/icon-cart.svg");
+    width: 15px;
+    height: 16px;
+}
+
+.button:is(:hover, :focus) {
+background-color: var(--Dark-dark-cyan);
+}
